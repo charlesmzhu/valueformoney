@@ -1,0 +1,17 @@
+<h1>Value for Money: Yelp Edition</h1>
+<em> The Value for Money rating is just 2.5 times the number of stars minus the number of dollars </em> </br>
+<br />
+<%= form_tag do %>
+	<%= label_tag(:city, "City: ")%>
+	<%= text_field_tag (:city) %>
+
+	<%= submit_tag("Submit") %>
+<% end %>
+<br />
+<% @nodearray.each do |place| %>
+	Value for money rating: <%= place[0] %> <br />
+	Business Name: <%= place[1] %> <br />
+	Number of reviews: <%= place[2] %> <br />
+	Address: <%= place[5] %>. <br />
+	Dollars: <%= place[3] %> Rating: <%=place[4]%> <br /> <br />
+<% end %>
